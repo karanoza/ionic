@@ -7,14 +7,14 @@ import { Recipe } from './recipe.model';
 export class RecipesService {
   private recipes: Recipe[] = [
     {
-      id: 'R1',
+      id: 'r1',
       title: 'Aamras',
       imageUrl:
         'https://rakskitchen.net/wp-content/uploads/2016/05/aamras-recipe.jpg',
       ingredients: ['Mangoes', 'Sugar', 'Milk'],
     },
     {
-      id: 'R2',
+      id: 'r2',
       title: 'Maggie',
       imageUrl:
         'https://www.maggi.ph/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/ec9fce823d23bbb054d52aea1981fc0c.jpg?h=28121b77&itok=8wByr5Il',
@@ -28,7 +28,7 @@ export class RecipesService {
     return [...this.recipes];
   }
 
-  getRecipe(recipeId: string) {
+  getRecipe(recipeId: string|null) {
     return {
       ...this.recipes.find((recipe) => {
         return recipe.id === recipeId;
