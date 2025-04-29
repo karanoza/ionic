@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonAvatar, IonImg, IonLabel } from '@ionic/angular/standalone';
 import { Recipe } from './recipe.model';
 import { RecipesService } from './recipes.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.page.html',
   styleUrls: ['./recipes.page.scss'],
   standalone: true,
-  imports: [IonLabel, IonImg, IonAvatar, IonItem, IonList, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonLabel, IonImg, IonAvatar, IonItem, IonList, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, RouterLink]
 })
 export class RecipesPage implements OnInit {
  
