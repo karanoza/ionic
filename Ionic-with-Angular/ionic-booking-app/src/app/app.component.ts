@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import {
   IonApp,
@@ -15,6 +15,7 @@ import {
   IonIcon,
   IonLabel
 } from '@ionic/angular/standalone';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -31,9 +32,10 @@ import {
   IonLabel],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   logout(){
-
+    this.authService.logout();
+    this.router.navigateByUrl('/auth')
   }
 }
