@@ -10,14 +10,14 @@ export class PlacesService {
      {
     id: '1',
     title: 'Pune',
-    descriptio: 'Best places to visit in Pune',
+    descriptio: 'Best places to visit near Pune',
     imageUrl: 'https://vl-prod-static.b-cdn.net/system/images/000/705/502/6ff12f748b7646cac6c0e305b2d1bf55/x1000gt/WhatsApp_Image_2023-08-27_at_11_47_06_PM__2_.jpeg?1693201396',
     price: 'Starts from ₹2,999'
   },
   {
     id: '2',
     title: 'Kashmir',
-    descriptio: 'Best places to visit Kashmir',
+    descriptio: 'Srinagar, Gulmarg and More',
     imageUrl: 'https://hblimg.mmtcdn.com/content/hubble/img/destimgjune2022/mmt/activities/m_Srinagar%204_l_679_1437.jpg',
     price: 'Starts from ₹45,499'
   },
@@ -31,7 +31,7 @@ export class PlacesService {
   {
     id: '4',
     title: 'Munnar',
-    descriptio: 'Best places to visit Munnar',
+    descriptio: 'Explore the best of Kerala near Munnar',
     imageUrl: 'https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1369/Munnar%209.jpg?crop=800:420&downsize=800:420',
     price: 'Starts from ₹15,999'
   },
@@ -45,7 +45,7 @@ export class PlacesService {
   {
     id: '6',
     title: 'Delhi',
-    descriptio: 'Best places to visit Delhi',
+    descriptio: 'Red fort, India gate & many more',
     imageUrl: 'https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1218/Birds%20flying%20over%20India%20Gate.jpeg?crop=830:771px&downsize=830:771px',
     price: 'Starts from ₹12,999'
   },
@@ -59,7 +59,7 @@ export class PlacesService {
   {
     id: '8',
     title: 'Amritsar',
-    descriptio: 'Best places to visit Leh-Ladakh',
+    descriptio: 'Visit Golden Temple and Many More',
     imageUrl: 'https://hblimg.mmtcdn.com/content/hubble/img/destimg/mmt/destination/m_Amritsar_main_tv_destination_img_4_l_1028_1547.jpg',
     price: 'Starts from ₹12,199'
   },
@@ -67,14 +67,14 @@ export class PlacesService {
     id: '9',
     title: 'Varanasi',
     descriptio: 'Visit Varanasi and Ganga Aarti',
-    imageUrl: 'https://via.placeholder.com/150?text=Notebook',
+    imageUrl: 'https://hldak.mmtcdn.com/prod-s3-activity-templates/activitiesImagesFinal/sightseeing/VNS/498.png?crop=830:771px&downsize=830:771px',
     price: 'Starts from ₹12,999'
   },
   {
     id: '10',
     title: 'Goa',
     descriptio: 'Best places to visit Goa',
-    imageUrl: 'https://via.placeholder.com/150?text=Plug',
+    imageUrl: 'https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/U.jpg?crop=830:771px&downsize=830:771px',
     price: 'Starts from ₹20,999'
   }
 ];
