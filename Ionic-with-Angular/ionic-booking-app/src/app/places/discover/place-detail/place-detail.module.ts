@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PlaceDetailPage } from './place-detail.page';
+import { CreateBookingComponent } from 'src/app/bookings/create-booking/create-booking.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,6 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
-  ]
+  ],
 })
 export class PlaceDetailPageModule { }
