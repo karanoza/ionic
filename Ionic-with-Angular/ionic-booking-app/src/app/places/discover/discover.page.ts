@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { PlacesService } from '../places.service';
 import { Place } from '../place.model';
 import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router'; 
 
 @Component({
   selector: 'app-discover',
   templateUrl: './discover.page.html',
   styleUrls: ['./discover.page.scss'],
   standalone: true,
-  imports: [CommonModule,IonicModule,FormsModule]
+  imports: [CommonModule,IonicModule,FormsModule, RouterModule,]
 })
 export class DiscoverPage implements OnInit {
   loadedPlaces!: Place[];
