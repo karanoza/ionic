@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import {
   IonApp,
@@ -7,6 +8,7 @@ import {
   IonHeader,
   IonToolbar,
   IonTitle,
+  IonMenuToggle,
   IonContent,
   IonList,
   IonItem,
@@ -17,9 +19,10 @@ import {
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  imports: [IonApp, IonRouterOutlet, IonMenu,
+  imports: [IonApp,RouterModule, IonRouterOutlet, IonMenu,
   IonHeader,
   IonToolbar,
+  IonMenuToggle,
   IonTitle,
   IonContent,
   IonList,
@@ -29,4 +32,8 @@ import {
 })
 export class AppComponent {
   constructor() {}
+
+  logout(){
+
+  }
 }
