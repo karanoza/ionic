@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PlacesService } from '../places.service';
 import { Place } from '../place.model';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, SegmentChangeEventDetail } from '@ionic/angular';
 import { RouterModule } from '@angular/router'; 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
@@ -23,5 +23,9 @@ export class DiscoverPage implements OnInit {
   ngOnInit() {
     this.loadedPlaces = this.placesService.places;
     this.listedLoadedPlaces = this.loadedPlaces.slice(1);
+  }
+
+  onFilterUpdate(event:CustomEvent<SegmentChangeEventDetail>){
+    console.log(event)
   }
 }

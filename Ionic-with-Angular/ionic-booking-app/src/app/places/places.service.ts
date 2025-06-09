@@ -11,7 +11,7 @@ export class PlacesService {
     id: '1',
     title: 'Pune',
     description: 'Best places to visit near Pune',
-    imageUrl: 'https://vl-prod-static.b-cdn.net/system/images/000/705/502/6ff12f748b7646cac6c0e305b2d1bf55/x1000gt/WhatsApp_Image_2023-08-27_at_11_47_06_PM__2_.jpeg?1693201396',
+    imageUrl: 'https://i0.wp.com/triptometer.com/wp-content/uploads/2024/07/kalu-Waterfall-in-Monsoon.png?resize=1115%2C628&ssl=1',
     price: 'Starts from ₹2,999'
   },
   {
