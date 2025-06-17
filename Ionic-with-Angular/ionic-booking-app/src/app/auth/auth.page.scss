@@ -1,0 +1,17 @@
+ion-item.input-invalid {
+  --highlight-color-focused: red;
+  --highlight-color: red;
+  --border-color: red;
+}
+
+ion-item.input-valid {
+  --highlight-color-focused: green;
+  --highlight-color: green;
+  --border-color: green;
+}
+
+.error-msg {
+  color: red;
+  font-size: 13px;
+  margin-left: 10px;
+}
