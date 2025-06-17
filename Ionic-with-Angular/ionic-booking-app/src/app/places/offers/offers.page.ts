@@ -6,13 +6,14 @@ import { PlacesService } from '../places.service';
 import { Place } from '../place.model';
 import { IonicModule, IonItemSliding } from '@ionic/angular';
 import { Router, RouterModule } from '@angular/router';
+import { OfferItemComponent } from "./offer-item/offer-item.component";
 
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.page.html',
   styleUrls: ['./offers.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, RouterModule]
+  imports: [CommonModule, FormsModule, IonicModule, RouterModule, OfferItemComponent]
 })
 export class OffersPage implements OnInit {
   offers!: Place[];
