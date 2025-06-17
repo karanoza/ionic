@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent,IonInput,IonItem, IonLabel, IonHeader, IonTitle, IonToolbar, IonButton, IonList, IonSpinner, LoadingController } from '@ionic/angular/standalone';
+import { IonContent,IonInput,IonItem, IonLabel, IonHeader, IonTitle, IonToolbar, IonButton, IonList, IonSpinner, LoadingController, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './auth.page.html',
   styleUrls: ['./auth.page.scss'],
   standalone: true,
-  imports: [IonButton,IonSpinner,IonList,IonItem,IonInput,IonLabel,IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonButton,IonGrid,IonRow,IonCol,IonSpinner,IonList,IonItem,IonInput,IonLabel,IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class AuthPage implements OnInit {
   isLoading = false;
