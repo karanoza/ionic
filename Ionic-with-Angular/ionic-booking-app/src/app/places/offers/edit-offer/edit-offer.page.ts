@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, NavController } from '@ionic/angular/standalone';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
@@ -12,10 +12,11 @@ import { Place } from '../../place.model';
   templateUrl: './edit-offer.page.html',
   styleUrls: ['./edit-offer.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, ReactiveFormsModule]
 })
 export class EditOfferPage implements OnInit {
   place!: Place
+   form!: FormGroup;
 
   constructor(private route: ActivatedRoute, private navCtrl:NavController, private placesService:PlacesService) { }
 
@@ -25,7 +26,17 @@ export class EditOfferPage implements OnInit {
         this.navCtrl.navigateBack('places/tabs/offers');
         return;
       }
-      this.place = this.placesService.getPlace(paramMap.get('placeId'))
+      this.place = this.placesService.getPlace(paramMap.get('placeId'));
+      this.form = new FormGroup({
+        title: new FormControl(this.place.title, {
+        updateOn: 'blur',
+        validators: [Validators.required]
+      }), 
+      description: new FormControl(this.place.description, {
+        updateOn: 'blur',
+        validators: [Validators.required, Validators.maxLength(180)]
+      })
+      })
   })
   }
  
