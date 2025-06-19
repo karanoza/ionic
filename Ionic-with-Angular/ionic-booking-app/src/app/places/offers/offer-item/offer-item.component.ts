@@ -13,7 +13,7 @@ import { IonicModule } from '@ionic/angular';
   imports: [CommonModule, FormsModule, IonicModule, RouterModule]
 })
 export class OfferItemComponent  implements OnInit {
-@Input() offer!: Place
+@Input() offer!: Place;
   constructor() { }
 
   ngOnInit() {}

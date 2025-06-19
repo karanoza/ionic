@@ -21,12 +21,14 @@ export class OffersPage implements OnInit {
   constructor(private placesService: PlacesService, private router: Router) { }
 
   ngOnInit() {
-    this.offers = this.placesService.places;
+    // this.offers = this.placesService.places;
   }
+  ionViewWillEnter() {
+   this.offers = this.placesService.places; // however you're loading fresh data everytime
+}
 
   onEdit(offerId: string | undefined, slidingItem:IonItemSliding){
     slidingItem.close();
     this.router.navigate(['/', 'places', 'tabs', 'offers','edit', offerId])
-    console.log(offerId,"yooo idsssss")
   }
 }
