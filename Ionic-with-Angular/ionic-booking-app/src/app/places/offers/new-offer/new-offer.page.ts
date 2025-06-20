@@ -100,6 +100,6 @@ export class NewOfferPage implements OnInit {
       new Date(this.form.value.dateTo),
     );
     this.form.reset();
-    this.router.navigate(['places/tabs/offers'])
+    this.router.navigate(['places/tabs/offers']);
   }
 }
