@@ -28,15 +28,12 @@ export class DiscoverPage implements OnInit, OnDestroy {
   }
 
   ionViewWillEnter(){
-    this.cdRef.detectChanges();
     this.getPlaces();
-     console.log(this.loadedPlaces,"ionviewwillenter")
-     console.log(this.listedLoadedPlaces,"ionviewwillenter")
   }
   
-  trackByPlaceId(index: number, place: Place): string {
-  return place.id ?? index.toString();
-}
+//   trackByPlaceId(index: number, place: Place): string {
+//   return place.id ?? index.toString();
+// }
 
   getPlaces(){
    this.placesSub =  this.placesService.places.subscribe(places => {

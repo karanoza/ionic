@@ -125,14 +125,14 @@ export class PlacesService {
   }
 
   getPlace(id: string | null) {
-  return this.places.pipe(
-    take(1),
-    map((places) => {
-      const place = places.find((p) => p.id === id);
-      return place ? { ...place } : null;
-    })
-  );
-}
+    return this.places.pipe(
+      take(1),
+      map((places) => {
+        const place = places.find((p) => p.id === id);
+        return place ? { ...place } : null;
+      })
+    );
+  }
 
   addPlace(
     title: string,
@@ -152,10 +152,9 @@ export class PlacesService {
       this.authService.userId
     );
     this.places.pipe(take(1)).subscribe((places) => {
-     this._places.next(places.concat(newPlace));
+      this._places.next(places.concat(newPlace));
     });
 
     console.log(this._places.getValue(), 'this are the new places updated');
-
   }
 }
