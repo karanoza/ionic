@@ -57,7 +57,7 @@ import { Router } from '@angular/router';
 export class NewOfferPage implements OnInit {
   form!: FormGroup;
 
-  constructor(private placesService: PlacesService, private router: Router ) {}
+  constructor(private placesService: PlacesService, private router: Router) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -90,14 +90,13 @@ export class NewOfferPage implements OnInit {
     }
 
     console.log(this.form);
-    
 
     this.placesService.addPlace(
       this.form.value.title,
       this.form.value.description,
       this.form.value.price,
       new Date(this.form.value.dateFrom),
-      new Date(this.form.value.dateTo),
+      new Date(this.form.value.dateTo)
     );
     this.form.reset();
     this.router.navigate(['places/tabs/offers']);

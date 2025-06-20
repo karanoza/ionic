@@ -30,7 +30,7 @@ import { Subscription } from 'rxjs';
   imports: [IonicModule, CommonModule, ReactiveFormsModule],
 })
 export class EditOfferPage implements OnInit, OnDestroy {
-  place: Place| null = null;
+  place: Place | null = null;
   form!: FormGroup;
   private placesSub!: Subscription;
 
@@ -39,7 +39,6 @@ export class EditOfferPage implements OnInit, OnDestroy {
     private navCtrl: NavController,
     private placesService: PlacesService
   ) {}
-
 
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap) => {
@@ -72,10 +71,9 @@ export class EditOfferPage implements OnInit, OnDestroy {
     console.log(this.form);
   }
 
-
-   ngOnDestroy(): void {
-    if(this.placesSub){
-         this.placesSub.unsubscribe();
+  ngOnDestroy(): void {
+    if (this.placesSub) {
+      this.placesSub.unsubscribe();
     }
   }
 }
