@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Place } from './place.model';
 import { AuthService } from '../auth/auth.service';
-import { BehaviorSubject, map, take } from 'rxjs';
+import { BehaviorSubject, delay, map, Observable, take, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -134,27 +134,61 @@ export class PlacesService {
     );
   }
 
+  // addPlaces(
+  //   title: string,
+  //   description: string,
+  //   price: number,
+  //   dateFrom: Date,
+  //   dateTo: Date
+  // ) {
+  //   const newPlace = new Place(
+  //     Math.random().toString(),
+  //     title,
+  //     description,
+  //     'https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/U.jpg?crop=830:771px&downsize=830:771px',
+  //     price,
+  //     dateFrom,
+  //     dateTo,
+  //     this.authService.userId
+  //   );
+  //   this.places
+  //     .pipe(
+  //       take(1),
+  //       tap((places) => {
+  //         setTimeout(() => {
+  //           this._places.next(places.concat(newPlace));
+  //         }, 1000);
+  //       })
+  //     )
+  //     .subscribe((places) => {});
+
+  //   console.log(this._places.getValue(), 'this are the new places updated');
+  // }
+
   addPlace(
     title: string,
     description: string,
     price: number,
     dateFrom: Date,
     dateTo: Date
-  ) {
+  ): Observable<Place[]> {
     const newPlace = new Place(
       Math.random().toString(),
       title,
       description,
-      'https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/U.jpg?crop=830:771px&downsize=830:771px',
+      'https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/U.jpg',
       price,
       dateFrom,
       dateTo,
       this.authService.userId
     );
-    this.places.pipe(take(1)).subscribe((places) => {
-      this._places.next(places.concat(newPlace));
-    });
 
-    console.log(this._places.getValue(), 'this are the new places updated');
+    return this.places.pipe(
+      take(1),
+      delay(1000),
+      tap((places) => {
+        this._places.next(places.concat(newPlace));
+      })
+    );
   }
 }
