@@ -19,6 +19,7 @@ import { MenuController } from '@ionic/angular/standalone';
 export class DiscoverPage implements OnInit, OnDestroy {
   loadedPlaces!: Place[];
   listedLoadedPlaces!: Place[];
+  relevantPlaces!: Place[]
   private placesSub!: Subscription;
 
   constructor(private placesService: PlacesService, private menuCtrl: MenuController, private cdRef: ChangeDetectorRef) { }
@@ -38,7 +39,8 @@ export class DiscoverPage implements OnInit, OnDestroy {
   getPlaces(){
    this.placesSub =  this.placesService.places.subscribe(places => {
       this.loadedPlaces = places;
-      this.listedLoadedPlaces = this.loadedPlaces.slice(1);
+      this.relevantPlaces = this.loadedPlaces;
+      this.listedLoadedPlaces = this.relevantPlaces.slice(1);
       
     }); // however you're loading fresh data everytime
     
