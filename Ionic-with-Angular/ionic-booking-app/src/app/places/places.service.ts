@@ -94,7 +94,7 @@ export class PlacesService {
       12199,
       new Date('2025-01-01'),
       new Date('2025-06-12'),
-      'bunty'
+      'karan'
     ),
 
     new Place(
@@ -105,7 +105,7 @@ export class PlacesService {
       12999,
       new Date('2025-01-01'),
       new Date('2025-06-12'),
-      'bunty'
+      'karan'
     ),
 
     new Place(
@@ -116,7 +116,7 @@ export class PlacesService {
       20999,
       new Date('2025-01-01'),
       new Date('2025-06-12'),
-      'bunty'
+      'karan'
     ),
   ]);
 
