@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start" contentId="main-content">
-      <ion-menu-button ></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Discover Places</ion-title>
   </ion-toolbar>
@@ -9,17 +9,26 @@
 
 <!-- main frontcard  -->
 <ion-content [fullscreen]="true">
-  <ion-segment  value="all" (ionChange)="onFilterUpdate($event)">
-    <ion-segment-button value="all" >All Places</ion-segment-button>
+  <ion-segment value="all" (ionChange)="onFilterUpdate($event)">
+    <ion-segment-button value="all">All Places</ion-segment-button>
     <ion-segment-button value="bookable">Bookable Places</ion-segment-button>
   </ion-segment>
-  <ion-grid style="text-align: center">
+  <ion-grid *ngIf="!relevantPlaces || relevantPlaces.length <= 0">
+    <ion-row>
+      <ion-col size="12" sizeSm="8" offsetSm="2" style="text-align: center">
+        <p>There are no bookable places right now, please come back later!</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid style="text-align: center" *ngIf="relevantPlaces.length > 0">
     <ion-row>
       <ion-col size="12" size-sm="8" offset-sm="2">
         <ion-card>
           <ion-card-header>
             <ion-card-title> {{relevantPlaces[0].title}} </ion-card-title>
-            <ion-card-subtitle> {{relevantPlaces[0].price }} </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{relevantPlaces[0].price }}
+            </ion-card-subtitle>
           </ion-card-header>
           <ion-img [src]="relevantPlaces[0].imageUrl"></ion-img>
           <ion-card-content>
@@ -30,9 +39,9 @@
               fill="clear"
               color="primary"
               [routerLink]="['/', 'places', 'tabs', 'discover', relevantPlaces[0].id]"
-              >
+            >
               More
-              </ion-button>
+            </ion-button>
           </div>
         </ion-card>
       </ion-col>
@@ -41,22 +50,27 @@
     <!-- List of remaining cards -->
     <!-- cdk virtual scroll is not updated after added new data below -->
     <ion-row>
-      <ion-col size="12" size-sm="8" offset-sm="2" style="text-align: center"> 
-        <cdk-virtual-scroll-viewport *ngIf="listedLoadedPlaces.length > 0" itemSize="30" class="viewport">
-          <ion-item *cdkVirtualFor="let place of listedLoadedPlaces"  [routerLink]="['/', 'places', 'tabs', 'discover', place.id]">
+      <ion-col size="12" size-sm="8" offset-sm="2" style="text-align: center">
+        <cdk-virtual-scroll-viewport
+          *ngIf="listedLoadedPlaces.length > 0"
+          itemSize="30"
+          class="viewport"
+        >
+          <ion-item
+            *cdkVirtualFor="let place of listedLoadedPlaces"
+            [routerLink]="['/', 'places', 'tabs', 'discover', place.id]"
+          >
             <ion-thumbnail slot="start">
-              <ion-img [src]="place.imageUrl">
-              </ion-img>
+              <ion-img [src]="place.imageUrl"> </ion-img>
             </ion-thumbnail>
             <ion-label>
               <h2>{{ place.title }}</h2>
               <p>{{ place.description }}</p>
             </ion-label>
           </ion-item>
-     </cdk-virtual-scroll-viewport>
+        </cdk-virtual-scroll-viewport>
       </ion-col>
     </ion-row>
-
 
     <!-- Below is data which is updated correctly after adding the new place in the list  -->
     <!-- <ion-row *ngFor="let place of relevantPlaces">
@@ -70,3 +84,5 @@
     </ion-row>
   </ion-grid>
 </ion-content> -->
+  </ion-grid></ion-content
+>
