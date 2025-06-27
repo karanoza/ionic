@@ -12,6 +12,10 @@ import {
   NavController,
   ModalController,
   ActionSheetController,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
 } from '@ionic/angular/standalone';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlacesService } from '../../places.service';
@@ -31,6 +35,10 @@ import { Subscription } from 'rxjs';
     IonContent,
     IonHeader,
     IonTitle,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
     IonToolbar,
     CommonModule,
     FormsModule,
